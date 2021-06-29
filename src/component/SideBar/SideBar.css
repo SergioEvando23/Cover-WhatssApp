@@ -1,0 +1,45 @@
+header{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+.sideBar--header--avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.sideBar--header--buttons {
+    display: flex;
+}
+.header-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.sideBar--search{
+    background-color: #F6F6F6;
+    border-bottom: 1px solid #EEE;
+    padding: 5px 15px;
+}
+.seach--input{
+    background-color: #FFFFFF;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.seach--input input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    margin-left: 10px;
+}

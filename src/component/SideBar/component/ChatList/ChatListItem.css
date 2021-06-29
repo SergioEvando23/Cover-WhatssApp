@@ -1,0 +1,27 @@
+.chatListItem {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    height: 70px;
+}
+.chatListItem--avatar {
+
+}
+.chatListItem--lines {
+
+}
+.chatListItem--lines--row {
+
+}
+.chatListItem--lines--row--name {
+
+}
+.chatListItem--lines--row--date {
+
+}
+.chatListItem--history {
+
+}
+.chatListItem--historyMensage {
+    
+}
