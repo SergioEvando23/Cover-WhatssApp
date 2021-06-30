@@ -1,5 +1,5 @@
 import React from 'react';
-import './ChatListItem';
+import './ChatListItem.css';
 
 const ChatList = () => {
     return (
@@ -14,9 +14,9 @@ const ChatList = () => {
                         20:00
                     </div>
                 </div>
-                <div className="chatListItem--history"> 
-                    <div className="chatListItem--historyMensage"> 
-                        <p> oi fiote? </p>
+                <div className="chatListItem--lines--row"> 
+                    <div className="chatListItem--lines--row--historyMensage"> 
+                        <p> oi fiote?????????? ????????????????? ?????????????? ?????????????  ??????????? </p>
                     </div>
                 </div>
             </div>

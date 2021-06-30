@@ -8,7 +8,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import SearchIcon from '@material-ui/icons/Search';
 
 const SideBar = ( ) => {
-    const [chatList, setChatList] = useState([{},{},{}]);
+    const [chatList, setChatList] = useState([{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]);
 
     return (
         <div>
@@ -28,7 +28,7 @@ const SideBar = ( ) => {
 
             </header>
             <div className="sideBar--search">  
-                <div className="seach--input">
+                <div className="search--input">
                     <SearchIcon fontSize="small" style={{color: '#919191'}}/>
                     <input type="search" placeholder="Pesquisar ou começar uma nova conversa" />
                 </div>

@@ -1,5 +1,5 @@
 header{
-    height: 60px;
+    height: 7vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,18 +28,31 @@ header{
     border-bottom: 1px solid #EEE;
     padding: 5px 15px;
 }
-.seach--input{
+.search--input{
     background-color: #FFFFFF;
-    height: 40px;
+    height: 4vh;
     border-radius: 20px;
     display: flex;
     align-items: center;
     padding: 0 10px;
 }
-.seach--input input {
+.search--input input {
     flex: 1;
     border: 0;
     outline: 0;
     background-color: transparent;
     margin-left: 10px;
+}
+.sideBar--chatList {
+    flex: 1;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    height: 87.6vh;
+}
+.sideBar--chatList::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+}
+.sideBar--chatList::-webkit-scrollbar-thumb{
+    background-color: #0000003a;
 }
