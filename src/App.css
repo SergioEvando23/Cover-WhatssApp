@@ -19,5 +19,5 @@ body{
   border-right: 1px solid #DDDDDD;
 }
 .contentArea{
-
+   flex: 1;
 }
