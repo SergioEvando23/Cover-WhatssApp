@@ -3,10 +3,10 @@ import './App.css';
 import SideBar from './component/SideBar';
 import ChatIntro from './component/ChatIntro';
 import ChatWindow from './component/ChatWindow';
-import ChatProvider from './context/chatContext';
+import ChatProvider from './context/ChatContext';
 
 function App() {
-  const [ isOpenChat, setIsOpenChat] = useState();
+  const [isOpenChat, setIsOpenChat] = useState({});
 
   return (
     <ChatProvider>

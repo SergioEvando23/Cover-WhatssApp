@@ -6,9 +6,10 @@ import SlowMotionVideoIcon from '@material-ui/icons/SlowMotionVideo';
 import AddIcon from '@material-ui/icons/Add';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import SearchIcon from '@material-ui/icons/Search';
-import { useChatContext } from '../../context/chatContext';
+import { useChatContext } from './../../context/ChatContext';
 
 const SideBar = ( ) => {
+    const [isOpenChat, setIsOpenChat] = useState([]);
     const [chatList, setChatList] = useState([
         {chatId: 1, title: 'Fulana Verde', image: 'https://cdn.pixabay.com/photo/2021/06/26/09/32/woman-6365735_960_720.jpg'},
         {chatId: 2, title: 'Fulana Azul', image: 'https://cdn.pixabay.com/photo/2021/06/09/07/02/extraterrestrial-6322554_960_720.jpg'},
@@ -18,7 +19,6 @@ const SideBar = ( ) => {
         {chatId: 6, title: 'Fulana Indiana', image: 'https://cdn.pixabay.com/photo/2021/06/12/07/34/woman-6330216_960_720.jpg'},
         {chatId: 7, title: 'Fulana Cibernetica', image: 'https://cdn.pixabay.com/photo/2021/06/01/06/10/woman-6300665_960_720.png'},
     ]);
-    const [isOpenChat, setIsOpenChat] = useChatContext({});
     
     return (
         <div>
@@ -47,6 +47,9 @@ const SideBar = ( ) => {
                 {chatList.map((item, key) => (
                     <ChatListItem
                         key={key}
+                        data={item}
+                        active={isOpenChat.chatId === chatList[key].chatId}
+                        onClick={() => setIsOpenChat(chatList[key])}
                     />
                 ))}
             </div>

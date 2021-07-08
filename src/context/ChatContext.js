@@ -5,7 +5,7 @@ import React, { createContext, useState, useContext } from 'react';
  * @returns Cria um contexto react
  */
 const ChatContext = createContext({
-  isOpenChat: {},
+  isOpenChat: [],
   setIsOpenChat: () => { },
 });
 
@@ -31,7 +31,7 @@ export default function ChatProvider({ children }) {
 
 /**
 * Acessa o contexto `ChatContext`
-* @returns a listagem de imagens e um dispatch para setar a lista
+* @returns a informação e um dispatch para setar a lista
 */
 export function useChatContext() {
   const context = useContext(ChatContext);
