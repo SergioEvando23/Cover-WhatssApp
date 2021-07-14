@@ -8,7 +8,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import SearchIcon from '@material-ui/icons/Search';
 import { useChatContext } from './../../context/ChatContext';
 
-const SideBar = ( ) => {
+const SideBar = ({avatar}) => {
     const [isOpenChat, setIsOpenChat] = useState([]);
     const [chatList, setChatList] = useState([
         {chatId: 1, title: 'Fulana Verde', image: 'https://cdn.pixabay.com/photo/2021/06/26/09/32/woman-6365735_960_720.jpg'},
@@ -23,7 +23,7 @@ const SideBar = ( ) => {
     return (
         <div>
             <header className="sideBar--header"> 
-                <img className="sideBar--header--avatar" src="https://cdn.pixabay.com/photo/2021/06/08/06/43/man-6319908_960_720.jpg" alt="avatar"/>
+                <img className="sideBar--header--avatar" src={avatar} alt="avatar"/>
                 <div className="sideBar--header--buttons">
                     <div className="header-button">
                         <SlowMotionVideoIcon style={{color: '#919191'}} />

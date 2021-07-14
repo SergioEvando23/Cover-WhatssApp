@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import EmojiPicker from 'emoji-picker-react';
 import './ChatWindow.css';
 
-import MessageItem from './component/MessageItem'
+import MessageItem from './component/MessageItem';
 
 import SearchIcon from '@material-ui/icons/Search';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
@@ -12,11 +12,34 @@ import CloseIcon from '@material-ui/icons/Close';
 import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
 
-const ChatWindow = ( ) => {
+const ChatWindow = ({user}) => {
+    const body = useRef();
     const [isEmojiOpen, setIsEmojiOpen] = useState(false);
     const [text, setText] = useState('');
     const [listening, setListening] = useState(true);
-    const [list, setList] = useState([]);
+    const [list, setList] = useState([
+        {author: 123, body:  "Bla bla bla"},
+        {author: 123, body:  "Bla bla"}, 
+        {author: 1234, body:  "Bla bla bla bla"},
+        {author: 123, body:  "Bla bla bla"},
+        {author: 123, body:  "Bla bla"}, 
+        {author: 1234, body:  "Bla bla bla bla"},
+        {author: 123, body:  "Bla bla bla"},
+        {author: 123, body:  "Bla bla"}, 
+        {author: 1234, body:  "Bla bla bla bla"},
+        {author: 123, body:  "Bla bla bla"},
+        {author: 123, body:  "Bla bla"}, 
+        {author: 1234, body:  "Bla bla bla bla"},
+        {author: 123, body:  "Bla bla bla"},
+        {author: 123, body:  "Bla bla"}, 
+        {author: 1234, body:  "Bla bla bla bla"},
+    ]); 
+
+    useEffect(() => {
+        if(body.current.scrollHeight > body.current.offsetHeight) {
+            body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight;
+        }
+    }, [list]);
 
     let recognition = null;
     let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -74,11 +97,12 @@ const ChatWindow = ( ) => {
                 </div> 
 
            </div>
-           <div className="chatWindow--body"> 
+           <div ref={body} className="chatWindow--body" >-
                 {list.map((item, key) => (
                     <MessageItem
                         key={key}
                         data={item}
+                        user={user}
                     />
                 ))}
            </div>
