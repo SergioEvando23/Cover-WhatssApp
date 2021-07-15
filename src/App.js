@@ -18,16 +18,25 @@ function App() {
     {chatId: 6, title: 'Fulana Indiana', image: 'https://cdn.pixabay.com/photo/2021/06/12/07/34/woman-6330216_960_720.jpg'},
     {chatId: 7, title: 'Fulana Cibernetica', image: 'https://cdn.pixabay.com/photo/2021/06/01/06/10/woman-6300665_960_720.png'},
   ]);
-  const [user, setUser] = useState({
-    id: 1234,
-    avatar: 'https://cdn.pixabay.com/photo/2021/06/08/06/43/man-6319907_960_720.png',
-    name: 'Fulano'
-  });
+  const [user, setUser] = useState(null);
   const [showNewChat, setShowNewChat] = useState(false)
+
+  const handleLoginData = async (u) => {
+    let newUser = {
+      id: uid,
+      name: u.displayName,
+      avatar: u.photoURL,
+    }
+    //adicionar o usuario no banco de dados
+    setUser(newUser);
+  } 
+
+  if(user === null) {
+    return(<Login onRecive={handleLoginData}/>)
+  }
 
   return (
     <ChatProvider>
-        {/* <Login />  */}
       <div className="app-window">
         <NewChat 
           user={user}
