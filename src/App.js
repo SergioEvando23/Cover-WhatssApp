@@ -3,7 +3,6 @@ import './App.css';
 import SideBar from './component/SideBar';
 import ChatIntro from './component/ChatIntro';
 import ChatWindow from './component/ChatWindow';
-import ChatProvider from './context/ChatContext';
 import NewChat from './component/NewChat';
 import Login from './component/Login';
 
@@ -23,7 +22,7 @@ function App() {
 
   const handleLoginData = async (u) => {
     let newUser = {
-      id: uid,
+      id: u.uid,
       name: u.displayName,
       avatar: u.photoURL,
     }
@@ -32,11 +31,11 @@ function App() {
   } 
 
   if(user === null) {
-    return(<Login onRecive={handleLoginData}/>)
+    return(<Login onReceive={handleLoginData}/>)
   }
 
   return (
-    <ChatProvider>
+    <div className="app" >
       <div className="app-window">
         <NewChat 
           user={user}
@@ -51,7 +50,7 @@ function App() {
           { isOpenChat !== undefined ? <ChatWindow user={user} /> : <ChatIntro />}
         </div>
       </div>
-    </ChatProvider>
+    </div>
   );
 }
 
